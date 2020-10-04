@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ProgramKasirSederhana {
     public static void main(String[] args){
         Scanner inputUser = new Scanner(System.in);
-        int uang,total,kembalian;
+        int uang,total,kembalian,kurang;
         System.out.print("Masukan total barang = ");
         int totalBarang = inputUser.nextInt();
         int[] nomorBarang = new int[totalBarang];
@@ -22,8 +22,18 @@ public class ProgramKasirSederhana {
         }
         total = sum;
         kembalian = uang-total;
+        kurang = total-uang;
         System.out.println("Total harganya adalah Rp." + total );
         System.out.println("Uang yang anda berikan adalah Rp." + uang);
-        System.out.println("Jadi kembaliannya dalah Rp." + kembalian);
+        if(uang>total){
+            System.out.println("Jadi kembaliannya dalah Rp." + kembalian);
+        }else if(uang==total){
+            System.out.println("Uang anda pas");
+        }else if(uang < total){
+            System.out.println("Uang anda kurang Rp." + kurang + " untuk membayarnya!");
+        }else {
+            System.out.println("Anda belum memasukan uang, anda miskin bitch!");
+        }
+        
     }
 }
