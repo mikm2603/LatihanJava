@@ -3,19 +3,25 @@ import java.util.Scanner;
 public class ProgramKasirSederhana {
     public static void main(String[] args){
         Scanner inputUser = new Scanner(System.in);
-        System.out.println("Masukan harga barang ");
-        System.out.println("Harga barang ke-1 : ");
-        int barang1 = inputUser.nextInt();
-        System.out.println("Harga barang ke-2 : ");
-        int barang2 = inputUser.nextInt();
-        System.out.println("Harga barang ke-3 : ");
-        int barang3 = inputUser.nextInt();
+        int uang,total,kembalian;
+        System.out.print("Masukan total barang = ");
+        int totalBarang = inputUser.nextInt();
+        int[] nomorBarang = new int[totalBarang];
+        int angkaAwal = 0;
+            while(angkaAwal < totalBarang ){
+                System.out.print("Masukan harga barang = ");
+                nomorBarang[angkaAwal] = inputUser.nextInt();
+                angkaAwal++;
+            }
+            
         System.out.println("Masukan uang yang berikan : ");
-        int uang = inputUser.nextInt();
-        
-        int total = barang1+barang2+barang3;
-        int kembalian = uang-total;
-        
+        uang = inputUser.nextInt();
+        int sum = 0;
+        for(int num : nomorBarang){
+            sum = sum+num;
+        }
+        total = sum;
+        kembalian = uang-total;
         System.out.println("Total harganya adalah Rp." + total );
         System.out.println("Uang yang anda berikan adalah Rp." + uang);
         System.out.println("Jadi kembaliannya dalah Rp." + kembalian);
