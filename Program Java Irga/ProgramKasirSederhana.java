@@ -13,17 +13,17 @@ public class ProgramKasirSederhana {
                 nomorBarang[angkaAwal] = inputUser.nextInt();
                 angkaAwal++;
             }
-            
-        System.out.println("Masukan uang yang berikan : ");
-        uang = inputUser.nextInt();
         int sum = 0;
         for(int num : nomorBarang){
             sum = sum+num;
         }
         total = sum;
+        System.out.println("Total harganya adalah Rp." + total );
+        System.out.println("Masukan uang yang berikan : ");
+        uang = inputUser.nextInt();
+        
         kembalian = uang-total;
         kurang = total-uang;
-        System.out.println("Total harganya adalah Rp." + total );
         System.out.println("Uang yang anda berikan adalah Rp." + uang);
         if(uang>total){
             System.out.println("Jadi kembaliannya dalah Rp." + kembalian);
@@ -34,6 +34,6 @@ public class ProgramKasirSederhana {
         }else {
             System.out.println("Anda belum memasukan uang, anda miskin bitch!");
         }
-        
+        System.out.println("Terima Kasih...");
     }
 }
